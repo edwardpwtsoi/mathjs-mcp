@@ -122,5 +122,3 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 // Start receiving messages on stdin and sending messages on stdout
 const transport = new StdioServerTransport();
 await server.connect(transport);
-
-console.log("MathJS MCP Server started");
