@@ -52,7 +52,7 @@ Add this to your `claude_desktop_config.json`:
       "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-mathjs-calculator"
+        "@mathjs-mcp-server"
       ]
     }
   }
