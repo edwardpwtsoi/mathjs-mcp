@@ -1,0 +1,41 @@
+{
+  "name": "mathjs-mcp-server",
+  "version": "1.0.0",
+  "description": "An MCP server for parsing and calculating mathematical expressions using mathjs",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": {
+    "mathjs-mcp-server": "build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x build/index.js",
+    "start": "node build/index.js",
+    "dev": "ts-node --esm src/index.ts",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "mathjs",
+    "calculator"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.1",
+    "mathjs": "^11.12.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.24",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwardpwtsoi/mathjs-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edwardpwtsoi/mathjs-mcp/issues"
+  },
+  "homepage": "https://github.com/edwardpwtsoi/mathjs-mcp#readme"
+}
