@@ -18,8 +18,8 @@
     "mathjs",
     "calculator"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Edward Tsoi",
+  "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.6.1",
     "mathjs": "^11.12.0",
