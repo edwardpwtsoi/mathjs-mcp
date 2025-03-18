@@ -59,6 +59,32 @@ Add this to your `claude_desktop_config.json`:
 }
 ```
 
+## Building and Testing
+
+### Build
+
+To build the project:
+
+```bash
+npm install
+npm run build
+```
+
+### Testing with Inspector
+
+To test the server with the MCP Inspector:
+
+1. Open the MCP Inspector in another terminal:
+```bash
+npm run inspector
+```
+
+1. Connect to the server at `http://localhost:5173` (default port)
+
+2. Test the available tools:
+   - Use the "calculate" tool to evaluate expressions
+   - Use the "derivative" tool to compute derivatives
+
 ## Example Usage
 
 ```javascript
