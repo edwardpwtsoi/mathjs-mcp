@@ -1,6 +1,6 @@
 {
   "name": "mathjs-mcp-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An MCP server for parsing and calculating mathematical expressions using mathjs",
   "type": "module",
   "main": "build/index.js",
