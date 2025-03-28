@@ -62,22 +62,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       
       const result = math.evaluate(expression);
       return { 
-        toolResult: {
-          content: [{ 
-            type: "text", 
-            text: `Result: ${result}` 
-          }]
-        }
+        result: result.toString()
       };
     } catch (error) {
-      return { 
-        toolResult: {
-          content: [{ 
-            type: "text", 
-            text: `Error: ${error instanceof Error ? error.message : String(error)}` 
-          }]
-        }
-      };
+      throw error;
     }
   }
   
