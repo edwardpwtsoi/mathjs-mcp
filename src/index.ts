@@ -11,7 +11,7 @@ import * as math from 'mathjs';
 // Create an MCP server
 const server = new Server({
   name: "MathJS-Calculator",
-  version: "1.0.0"
+  version: process.env.npm_package_version || "dev"
 }, {
   capabilities: {
     tools: {}
@@ -111,4 +111,4 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 const transport = new StdioServerTransport();
 await server.connect(transport);
 
-console.error("MathJS MCP Server started");
+console.error(`MathJS MCP Server started (v${process.env.npm_package_version})`);
