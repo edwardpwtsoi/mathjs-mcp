@@ -62,10 +62,32 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       
       const result = math.evaluate(expression);
       return { 
-        result: result.toString()
+        "jsonrpc": "2.0",
+        "id": 2,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": `The result of the expression is: ${result.toString()}`
+            }
+          ],
+          "isError": false
+        }
       };
     } catch (error) {
-      throw error;
+      return { 
+        "jsonrpc": "2.0",
+        "id": 2,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": `Error: ${error instanceof Error ? error.message : String(error)}`
+            }
+          ],
+          "isError": true
+        }
+      };
     }
   }
   
@@ -80,20 +102,30 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       
       const result = math.derivative(expression, variable).toString();
       return { 
-        toolResult: {
-          content: [{ 
-            type: "text", 
-            text: `The derivative of ${expression} with respect to ${variable} is: ${result}` 
-          }]
+        "jsonrpc": "2.0",
+        "id": 2,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": `The derivative of ${expression} with respect to ${variable} is: ${result}`
+            }
+          ],
+          "isError": false
         }
       };
     } catch (error) {
       return { 
-        toolResult: {
-          content: [{ 
-            type: "text", 
-            text: `Error: ${error instanceof Error ? error.message : String(error)}` 
-          }]
+        "jsonrpc": "2.0",
+        "id": 2,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": `Error: ${error instanceof Error ? error.message : String(error)}`
+            }
+          ],
+          "isError": true
         }
       };
     }
